@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-popins: var(--font-popins);
+  --font-bitter: var(--font-bitter);
+  --font-inter: var(--font-inter);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-popins), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background-color: #000;
+  /* The dark gray from your image */
+  color: #fff;
+  /* Your 'milk' color (adjust hex if needed) */
+}
+
+/* Firefox specific */
+::-moz-selection {
+  background-color: #000;
+  color: #fff;
+}
+
+@utility containerPadding {
+  @apply px-4 sm:px-8 md:px-12;
+}
